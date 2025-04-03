@@ -1,7 +1,7 @@
 package logger
 
 import (
-	"github.com/partnerhub24/konticket-serverless-pkg/environment"
+	"github.com/partnerhub24/konticket-serverless-libs/environment"
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
 )
