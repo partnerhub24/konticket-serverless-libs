@@ -1,5 +1,5 @@
-# This is Public repository.
-## Do not place any secret or credential.
+## This is Public repository.
+* Do not place any secret or credential.
 
 ## Definition
 * Compatable with konticket-serverless-api repository.
