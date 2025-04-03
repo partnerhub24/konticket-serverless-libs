@@ -1,4 +1,4 @@
-module github.com/partnerhub24/konticket-serverless-pkg
+module github.com/partnerhub24/konticket-serverless-libs
 
 go 1.22.5
 
