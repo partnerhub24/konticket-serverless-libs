@@ -1,7 +1,8 @@
 package logger
 
 import (
-	"github.com/partnerhub24/konticket-serverless-libs/environment"
+	"os"
+
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
 )
@@ -9,11 +10,11 @@ import (
 var log *zap.Logger
 
 func init() {
-	env := environment.GetEnv()
+	appEnv := os.Getenv("APP_ENV")
 
 	var config zap.Config
 
-	if env.App.AppEnv == "prod" {
+	if appEnv == "prod" {
 		config = zap.NewProductionConfig()
 	} else {
 		config = zap.NewDevelopmentConfig()

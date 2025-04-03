@@ -1,8 +1,9 @@
 package environment
 
 import (
-	"fmt"
 	"os"
+
+	"github.com/partnerhub24/konticket-serverless-libs/logger"
 )
 
 type AppEnvironment struct {
@@ -27,11 +28,11 @@ var env Evironment
 
 func GetEnv() Evironment {
 	if env.App.AppEnv != "" {
-		fmt.Println("Use ENV from Global cache.")
+		logger.Info("Use ENV from Global cache.")
 		return env
 	}
 
-	fmt.Println("ENV Global cache is missing, Get env in process...")
+	logger.Info("ENV Global cache is missing, Get env in process...")
 
 	app := AppEnvironment{
 		AppEnv: os.Getenv("APP_ENV"),
