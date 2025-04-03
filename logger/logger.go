@@ -37,8 +37,8 @@ func Debug(message string, field ...zap.Field) {
 	log.Debug(message, field...)
 }
 
-func Error(message any, field ...zap.Field) {
-	switch v := message.(type) {
+func Error(err any, field ...zap.Field) {
+	switch v := err.(type) {
 	case error:
 		log.Error(v.Error(), field...)
 	case string:
