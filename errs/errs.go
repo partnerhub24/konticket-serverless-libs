@@ -38,3 +38,10 @@ func NewNotFoundError(message string) error {
 		Message: message,
 	}
 }
+
+func NewForbiden(message string) error {
+	return AppErr{
+		Code:    http.StatusForbidden,
+		Message: message,
+	}
+}
