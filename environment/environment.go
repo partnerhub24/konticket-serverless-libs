@@ -19,9 +19,19 @@ type DatabaseEnvironment struct {
 	Name   string
 }
 
+type MongoDBEnvironment struct {
+	MongoDriver string
+	MongoUser   string
+	MongoPass   string
+	MongoHost   string
+	MongoPort   string
+	MongoName   string
+}
+
 type Evironment struct {
 	App      AppEnvironment
 	Database DatabaseEnvironment
+	MongoDB  MongoDBEnvironment
 }
 
 var env Evironment
@@ -47,10 +57,19 @@ func GetEnv() Evironment {
 		Name:   os.Getenv("DB_NAME"),
 	}
 
+	mongoDB := MongoDBEnvironment{
+		MongoDriver: os.Getenv("MONGO_DRIVER"),
+		MongoUser:   os.Getenv("MONGO_USER"),
+		MongoPass:   os.Getenv("MONGO_PASS"),
+		MongoHost:   os.Getenv("MONGO_HOST"),
+		MongoPort:   os.Getenv("MONGO_PORT"),
+		MongoName:   os.Getenv("MONGO_NAME"),
+	}
+
 	env = Evironment{
 		App:      app,
 		Database: database,
+		MongoDB:  mongoDB,
 	}
-
 	return env
 }
